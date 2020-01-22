@@ -1,0 +1,145 @@
+<!doctype  html>
+<html>
+  <head><meta charset="utf-8">
+      <title>Clock</title>
+      <link rel="stylesheet" href="main.css">
+      </head>
+     <body>
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            go back
+        </a>
+    </body>
+      <body>
+        <div id="clock" class="inner">
+          <h2>pst time...</h2>
+            <br>
+          <div id="time">
+            <div><span id="hour">00</span><span>:</span></div>
+            <div><span id="minutes">00</span><span>:</span></div>
+            <div><span id="seconds">00</span><span></span></div>
+          </div>
+            
+            <script type="text/javascript">
+                function clock(){
+                    var hours = document.getElementById('hour');
+                    var minutes = document.getElementById('minutes');
+                    var seconds = document.getElementById('seconds');
+                    
+                    var h = new Date().getHours();
+                    var m = new Date().getMinutes();
+                    var s = new Date().getSeconds();
+                    var am = "AM";
+                    
+                    if (h >12){
+                        h = h -12;
+                        var am = "PM";
+                    }
+                    
+                    h = (h < 10) ? "0" + h : h
+                    m = (m < 10) ? "0" + m : m
+                    s = (s < 10) ? "0" + s : s
+                    
+                    hours.innerHTML = h;
+                    minutes.innerHTML = m;
+                    seconds.innerHTML = s;
+                    
+                }
+                 var interval = setInterval(clock, 1000);
+            </script>
+        </div>
+          <div id="clock" class="inner2">
+          <h2>est time...</h2>
+              <br>
+          <div id="time">
+            <div><span id="hr">00</span><span>:</span></div>
+            <div><span id="min">00</span><span>:</span></div>
+            <div><span id="sec">00</span><span></span></div>
+          </div>
+            
+            <script type="text/javascript">
+                function clock(){
+                    var hrs = document.getElementById('hr');
+                    var mins = document.getElementById('min');
+                    var secs = document.getElementById('sec');
+                    
+                    var h2 = new Date().getHours() + 3;
+                    var m2 = new Date().getMinutes();
+                    var s2 = new Date().getSeconds();
+                    
+                    h2 = (h2 < 10) ? "0" + h2 : h2
+                    m2 = (m2 < 10) ? "0" + m2 : m2
+                    s2 = (s2 < 10) ? "0" + s2 : s2
+                    
+                    hrs.innerHTML = h2;
+                    mins.innerHTML = m2;
+                    secs.innerHTML = s2;
+                    
+                }
+                 var interval = setInterval(clock, 1000);
+            </script>
+        </div>
+          <div id="date" class="outer">
+          <h2>Today's Date is..</h2>
+              <br>
+          <div id = "today">
+                <div><span id = "day"></span><span></span></div>
+                <div><span id = "month"></span><span></span></div>
+                <div><span id = "nday"></span><span></span></div>
+                <div><span id = "year"></span><span></span></div>
+            </div>
+              
+              <script type="text/javascript">
+                function date(){
+                    var day = document.getElementById('day');
+                    var month = document.getElementById('month');
+                    var nday = document.getElementById('nday');
+                    var year = document.getElementById('year');
+                    
+                     var d = new Date();
+                    var m = new Date();
+                    var nd = new Date().getDate();
+                    var yr = new Date().getFullYear();
+                    
+                    nday.innerHTML = nd;
+                    year.innerHTML = yr;
+                    
+                    var weekday = new Array(7);
+                    weekday[0] = "Sunday";
+                    weekday[1] = "Monday";
+                    weekday[2] = "Tuesday";
+                    weekday[3] = "Wednesday";
+                    weekday[4] = "Thursday";
+                    weekday[5] = "Friday";
+                    weekday[6] = "Saturday";
+                    var wday = weekday[d.getDay()];
+                    
+                    day.innerHTML = wday;
+                    
+                    var months = new Array();
+                    months[0] = "January";
+                    months[1] = "February";
+                    months[2] = "March";
+                    months[3] = "April";
+                    months[4] = "May";
+                    months[5] = "June";
+                    months[6] = "July";
+                    months[7] = "August";
+                    months[8] = "September";
+                    months[9] = "October";
+                    months[10] = "November";
+                    months[11] = "December";
+
+                    var mth = months[m.getMonth()];
+                    
+                    month.innerHTML = mth;
+                }
+                var interval = setInterval(date, 1000);
+              </script>
+
+          </div>
+          </body>
+</html>
